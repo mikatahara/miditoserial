@@ -110,4 +110,36 @@ The serial communication parameters are:
 
 | Parameter | Value |
 |---|---|
-| Baud rate |
+| Baud rate | 31,250 bps |
+| Data bits | 8 |
+| Parity | None |
+| Stop bits | 1 |
+| Format | 8N1 |
+
+Since 31,250 bps is a non-standard baud rate in Linux, this program uses the Linux-specific `termios2` interface and `BOTHER` to configure the serial port.
+
+## MIDI Connections
+
+The program uses the ALSA MIDI Sequencer.
+
+List available MIDI ports:
+
+```bash
+aconnect -l
+```
+
+Connect a MIDI keyboard to `miditoserial`:
+
+```bash
+aconnect <keyboard_port> <miditoserial_port>
+```
+
+Play a Standard MIDI File (SMF) using `pmidi`:
+
+```bash
+pmidi -p <miditoserial_port> example.mid
+```
+
+## License
+
+Specify your preferred open-source license here.
