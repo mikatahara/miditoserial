@@ -142,4 +142,5 @@ pmidi -p <miditoserial_port> example.mid
 
 ## License
 
-Specify your preferred open-source license here.
+This project is licensed under the MIT License.
+See the LICENSE file for details.
